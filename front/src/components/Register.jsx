@@ -5,13 +5,14 @@ import { registerUser } from "../services/authService";
 function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [role, setRole] = useState(false);
     const [error, setError] = useState("");
     const navigate = useNavigate();
   
     const handleRegister = async (e) => {
       e.preventDefault();
       try{
-        await registerUser({email, password});
+        await registerUser({email, password, role});
         navigate("/login");
       }catch (err) {
         setError("Registration failed. Please try again.");

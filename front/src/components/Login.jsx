@@ -5,13 +5,14 @@ import { loginUser } from "../services/authService";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try{
-      await loginUser({email, password});
+      await loginUser({email, password, role});
       navigate("/");
     }catch (err){
       setError("Login failed. Please check your credentials.");
