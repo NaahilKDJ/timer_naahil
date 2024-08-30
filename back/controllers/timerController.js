@@ -2,6 +2,9 @@ const Timer = require("../models/Timer");
 
 exports.submitReactionTime = async (req, res) => {
   const {userId, time} = req.body;
+  /* Appel a authenticate pour valider le token */
+
+  /* Parser le token pour récupérer le userId */
 
   try{
     const newTimer = new Timer({ user_id: userId, time });

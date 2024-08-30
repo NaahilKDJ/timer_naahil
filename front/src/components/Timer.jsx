@@ -31,7 +31,7 @@ function Timer() {
         <button onClick={startTimer} disabled={waiting}>
           {waiting ? "Wait for Green..." : "Start"}
         </button>
-        
+          <br/>
         <button onClick={stopTimer} disabled={waiting || startTime === 0}>
           Stop
         </button>
